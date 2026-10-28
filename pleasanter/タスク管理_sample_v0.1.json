@@ -1,0 +1,926 @@
+﻿{
+  "HeaderInfo": {
+    "AssemblyVersion": "1.5.2.0",
+    "BaseSiteId": 9663,
+    "Server": "http://localhost",
+    "CreatorName": "Administrator",
+    "PackageTime": "2026-10-21T18:53:29.7341282+09:00",
+    "Convertors": [
+      {
+        "SiteId": 9663,
+        "SiteTitle": "タスク管理",
+        "ReferenceType": "Sites",
+        "IncludeData": false,
+        "Order": "[9664,9601,9665]"
+      },
+      {
+        "SiteId": 9601,
+        "SiteTitle": "取引先マスタ",
+        "ReferenceType": "Results",
+        "IncludeData": false
+      },
+      {
+        "SiteId": 9750,
+        "SiteTitle": "定例タスクマスタ",
+        "ReferenceType": "Results",
+        "IncludeData": false
+      },
+      {
+        "SiteId": 9974,
+        "SiteTitle": "タスク管理（一覧開始終了・検証用）",
+        "ReferenceType": "Issues",
+        "IncludeData": false
+      }
+    ],
+    "IncludeSitePermission": true,
+    "IncludeRecordPermission": true,
+    "IncludeColumnPermission": true,
+    "IncludeNotifications": true,
+    "IncludeReminders": true
+  },
+  "Sites": [
+    {
+      "TenantId": 1,
+      "SiteId": 9663,
+      "Title": "タスク管理",
+      "SiteName": "",
+      "SiteGroupName": "",
+      "Body": "",
+      "GridGuide": "",
+      "EditorGuide": "",
+      "CalendarGuide": "",
+      "CrosstabGuide": "",
+      "GanttGuide": "",
+      "BurnDownGuide": "",
+      "TimeSeriesGuide": "",
+      "AnalyGuide": "",
+      "KambanGuide": "",
+      "ImageLibGuide": "",
+      "ReferenceType": "Sites",
+      "ParentId": 0,
+      "InheritPermission": 9663,
+      "SiteSettings": {
+        "Version": 1.017,
+        "ReferenceType": "Sites",
+        "NoDisplayIfReadOnly": false,
+        "NotInheritPermissionsWhenCreatingSite": false
+      },
+      "Publish": false,
+      "DisableCrossSearch": false,
+      "Comments": []
+    },
+    {
+      "TenantId": 1,
+      "SiteId": 9601,
+      "Title": "取引先マスタ",
+      "SiteName": "",
+      "SiteGroupName": "",
+      "Body": "",
+      "GridGuide": "",
+      "EditorGuide": "",
+      "CalendarGuide": "",
+      "CrosstabGuide": "",
+      "GanttGuide": "",
+      "BurnDownGuide": "",
+      "TimeSeriesGuide": "",
+      "AnalyGuide": "",
+      "KambanGuide": "",
+      "ImageLibGuide": "",
+      "ReferenceType": "Results",
+      "ParentId": 9663,
+      "InheritPermission": 9576,
+      "SiteSettings": {
+        "Version": 1.017,
+        "ReferenceType": "Results",
+        "GridColumns": [
+          "ResultId",
+          "Title",
+          "Comments",
+          "Status",
+          "Updator",
+          "UpdatedTime"
+        ],
+        "EditorColumnHash": {
+          "General": [
+            "Title",
+            "Body",
+            "DescriptionB",
+            "DescriptionA",
+            "AttachmentsA",
+            "Status",
+            "_Section-1",
+            "Ver",
+            "ResultId",
+            "Comments"
+          ]
+        },
+        "SectionLatestId": 1,
+        "Sections": [
+          {
+            "Id": 1,
+            "LabelText": "見出し",
+            "AllowExpand": true,
+            "Expand": false
+          }
+        ],
+        "Columns": [
+          {
+            "ColumnName": "Status",
+            "ChoicesText": "100,準備中,準,status-new\n200,契約中,契,status-inprogress\n900,完了,完,status-closed\n",
+            "DefaultInput": "200"
+          },
+          {
+            "ColumnName": "Title",
+            "LabelText": "取引先名"
+          },
+          {
+            "ColumnName": "Body",
+            "LabelText": "業務内容、特記事項等"
+          },
+          {
+            "ColumnName": "DescriptionA",
+            "LabelText": "URL"
+          },
+          {
+            "ColumnName": "DescriptionB",
+            "LabelText": "住所"
+          },
+          {
+            "ColumnName": "AttachmentsA",
+            "LabelText": "契約書等"
+          }
+        ],
+        "NoDisplayIfReadOnly": false,
+        "NotInheritPermissionsWhenCreatingSite": false
+      },
+      "Publish": false,
+      "DisableCrossSearch": false,
+      "Comments": []
+    },
+    {
+      "TenantId": 1,
+      "SiteId": 9750,
+      "Title": "定例タスクマスタ",
+      "SiteName": "",
+      "SiteGroupName": "",
+      "Body": "有効なマスタのうち、実行曜日と適用期間が本日に該当するレコードからタスクを生成します。実行曜日と適用期間が空欄の場合は毎日対象です。",
+      "GridGuide": "",
+      "EditorGuide": "開始時刻は24時間表記のHH:mm形式で入力してください。実行曜日が空欄の場合は毎日、適用開始日・終了日が空欄の場合は期間制限なしとして扱います。",
+      "CalendarGuide": "",
+      "CrosstabGuide": "",
+      "GanttGuide": "",
+      "BurnDownGuide": "",
+      "TimeSeriesGuide": "",
+      "AnalyGuide": "",
+      "KambanGuide": "",
+      "ImageLibGuide": "",
+      "ReferenceType": "Results",
+      "ParentId": 9663,
+      "InheritPermission": 9750,
+      "SiteSettings": {
+        "Version": 1.017,
+        "ReferenceType": "Results",
+        "GridColumns": [
+          "ResultId",
+          "CheckA",
+          "Title",
+          "ClassB",
+          "NumA",
+          "ClassC",
+          "DateA",
+          "DateB",
+          "ClassA",
+          "Owner",
+          "Updator",
+          "UpdatedTime"
+        ],
+        "EditorColumnHash": {
+          "General": [
+            "CheckA",
+            "Title",
+            "Body",
+            "ClassA",
+            "Owner",
+            "ClassB",
+            "NumA",
+            "ClassC",
+            "DateA",
+            "DateB",
+            "ResultId",
+            "Ver",
+            "Comments"
+          ]
+        },
+        "Columns": [
+          {
+            "ColumnName": "ResultId",
+            "NoWrap": true
+          },
+          {
+            "ColumnName": "CheckA",
+            "LabelText": "有効",
+            "DefaultInput": "true"
+          },
+          {
+            "ColumnName": "Title",
+            "LabelText": "タスク名"
+          },
+          {
+            "ColumnName": "ClassA",
+            "LabelText": "取引先",
+            "ChoicesText": "[[9601]]",
+            "Link": true,
+            "SearchType": "PartialMatch"
+          },
+          {
+            "ColumnName": "ClassB",
+            "LabelText": "開始時刻",
+            "InputGuide": "24時間表記のHH:mm形式（例：09:30）",
+            "NoWrap": true,
+            "ValidateRequired": true,
+            "ServerRegexValidation": "^([01]\\d|2[0-3]):[0-5]\\d$",
+            "RegexValidationMessage": "開始時刻はHH:mm形式で入力してください。例：09:30"
+          },
+          {
+            "ColumnName": "NumA",
+            "LabelText": "所要時間（分）",
+            "DefaultInput": "60",
+            "ValidateRequired": true,
+            "Unit": "分",
+            "Min": 1.0
+          },
+          {
+            "ColumnName": "ClassC",
+            "LabelText": "実行曜日",
+            "InputGuide": "空欄の場合は毎日対象",
+            "ChoicesText": "1,月曜日,月,,\n2,火曜日,火,,\n3,水曜日,水,,\n4,木曜日,木,,\n5,金曜日,金,,\n6,土曜日,土,,\n0,日曜日,日,,",
+            "MultipleSelections": true
+          },
+          {
+            "ColumnName": "DateA",
+            "LabelText": "適用開始日",
+            "GridFormat": "Ymd",
+            "Nullable": true
+          },
+          {
+            "ColumnName": "DateB",
+            "LabelText": "適用終了日",
+            "GridFormat": "Ymd",
+            "Nullable": true
+          }
+        ],
+        "Links": [
+          {
+            "ColumnName": "ClassA",
+            "SiteId": 9601
+          }
+        ],
+        "ViewLatestId": 1,
+        "Views": [
+          {
+            "Id": 1,
+            "Name": "標準",
+            "GridColumns": [
+              "ResultId",
+              "CheckA",
+              "Title",
+              "ClassB",
+              "NumA",
+              "ClassC",
+              "DateA",
+              "DateB",
+              "ClassA",
+              "Owner",
+              "Updator",
+              "UpdatedTime"
+            ],
+            "ColumnSorterHash": {
+              "ClassB": "asc",
+              "ResultId": "asc"
+            },
+            "ApiColumnKeyDisplayType": 0,
+            "ApiColumnValueDisplayType": 0,
+            "CalendarSiteId": 0,
+            "CalendarTimePeriod": "Monthly",
+            "CrosstabGroupByX": "Status",
+            "CrosstabGroupByY": "ClassC",
+            "CrosstabAggregateType": "Count",
+            "CrosstabTimePeriod": "Monthly",
+            "KambanAggregateType": "Count",
+            "ApiDataType": 0
+          }
+        ],
+        "CharToAddWhenCopying": "",
+        "NoDisplayIfReadOnly": false,
+        "NotInheritPermissionsWhenCreatingSite": false
+      },
+      "Publish": false,
+      "DisableCrossSearch": false,
+      "Comments": []
+    },
+    {
+      "TenantId": 1,
+      "SiteId": 9974,
+      "Title": "タスク管理（一覧開始終了・検証用）",
+      "SiteName": "",
+      "SiteGroupName": "",
+      "Body": "",
+      "GridGuide": "",
+      "EditorGuide": "",
+      "CalendarGuide": "",
+      "CrosstabGuide": "",
+      "GanttGuide": "",
+      "BurnDownGuide": "",
+      "TimeSeriesGuide": "",
+      "AnalyGuide": "",
+      "KambanGuide": "",
+      "ImageLibGuide": "",
+      "ReferenceType": "Issues",
+      "ParentId": 9663,
+      "InheritPermission": 9974,
+      "SiteSettings": {
+        "Version": 1.017,
+        "ReferenceType": "Issues",
+        "GridColumns": [
+          "IssueId",
+          "ClassD",
+          "Status",
+          "Title",
+          "StartTime",
+          "CompletionTime",
+          "Body",
+          "ClassA",
+          "DateA",
+          "DateB",
+          "NumA",
+          "Comments",
+          "Updator",
+          "UpdatedTime"
+        ],
+        "EditorColumnHash": {
+          "General": [
+            "Title",
+            "StartTime",
+            "CompletionTime",
+            "Body",
+            "ClassA",
+            "CheckA",
+            "Status",
+            "_Section-2",
+            "DateA",
+            "DateB",
+            "NumA",
+            "NumB",
+            "DateC",
+            "DateD",
+            "_Section-1",
+            "ClassB",
+            "ClassC",
+            "CheckB",
+            "IssueId",
+            "Ver",
+            "Comments"
+          ]
+        },
+        "SectionLatestId": 2,
+        "Sections": [
+          {
+            "Id": 2,
+            "LabelText": "タイムトラッキング",
+            "AllowExpand": false,
+            "Expand": true
+          },
+          {
+            "Id": 1,
+            "LabelText": "管理情報",
+            "AllowExpand": true,
+            "Expand": false
+          }
+        ],
+        "Columns": [
+          {
+            "ColumnName": "CompletionTime",
+            "LabelText": "終了予定時刻",
+            "DefaultInput": "0",
+            "GridFormat": "Ymdhm",
+            "EditorFormat": "Ymdhm"
+          },
+          {
+            "ColumnName": "IssueId",
+            "NoWrap": true
+          },
+          {
+            "ColumnName": "StartTime",
+            "LabelText": "開始予定時刻",
+            "GridFormat": "Ymdhm",
+            "EditorFormat": "Ymdhm",
+            "CopyByDefault": true,
+            "AutoPostBack": true,
+            "ColumnsReturnedWhenAutomaticPostback": "CompletionTime"
+          },
+          {
+            "ColumnName": "ClassA",
+            "LabelText": "取引先",
+            "ChoicesText": "[[9601]]",
+            "AutoPostBack": true,
+            "ColumnsReturnedWhenAutomaticPostback": "CheckA",
+            "Link": true,
+            "SearchType": "PartialMatch"
+          },
+          {
+            "ColumnName": "DateA",
+            "LabelText": "実績開始日時",
+            "GridFormat": "Ymdhm",
+            "EditorFormat": "Ymdhm",
+            "CopyByDefault": true
+          },
+          {
+            "ColumnName": "DateB",
+            "LabelText": "実績終了日時",
+            "GridFormat": "Ymdhm",
+            "EditorFormat": "Ymdhm",
+            "CopyByDefault": true
+          },
+          {
+            "ColumnName": "CheckA",
+            "LabelText": "集計対象",
+            "DefaultInput": "false"
+          },
+          {
+            "ColumnName": "ClassB",
+            "LabelText": "生成キー",
+            "EditorReadOnly": true
+          },
+          {
+            "ColumnName": "ClassC",
+            "LabelText": "定例マスタ",
+            "EditorReadOnly": true
+          },
+          {
+            "ColumnName": "CheckB",
+            "LabelText": "自動生成",
+            "DefaultInput": "false",
+            "EditorReadOnly": true
+          },
+          {
+            "ColumnName": "Status",
+            "ChoicesText": "100,開始前,前,status-new\n200,実施中,実,status-inprogress\n900,完了,完,status-closed\n910,保留,留,status-rejected",
+            "CopyByDefault": true
+          },
+          {
+            "ColumnName": "NumA",
+            "LabelText": "作業時間（h）",
+            "DefaultInput": "0",
+            "DecimalPlaces": 1,
+            "Unit": "h",
+            "CopyByDefault": true
+          },
+          {
+            "ColumnName": "NumB",
+            "LabelText": "休憩時間（分）",
+            "DefaultInput": "0",
+            "Unit": "分",
+            "CopyByDefault": true
+          },
+          {
+            "ColumnName": "DateC",
+            "LabelText": "中断_開始時刻",
+            "EditorFormat": "Ymdhm",
+            "CopyByDefault": true
+          },
+          {
+            "ColumnName": "DateD",
+            "LabelText": "中断_終了時刻",
+            "EditorFormat": "Ymdhm",
+            "CopyByDefault": true
+          },
+          {
+            "ColumnName": "ClassD",
+            "LabelText": "計測",
+            "NoWrap": true,
+            "EditorReadOnly": true
+          }
+        ],
+        "Links": [
+          {
+            "ColumnName": "ClassA",
+            "SiteId": 9601
+          }
+        ],
+        "Formulas": [
+          {
+            "CalculationMethod": "Extended",
+            "Target": "CheckA",
+            "FormulaScript": "$IF($NOT($ISBLANK(取引先)),\"true\",\"false\")",
+            "FormulaMapping": "{\"ClassA\":\"取引先\"}",
+            "Id": 1
+          },
+          {
+            "CalculationMethod": "Extended",
+            "Target": "NumA",
+            "FormulaScript": "$IF($OR($ISBLANK(実績開始日時),$ISBLANK(実績終了日時)),\"\",$IF($AND($ISBLANK(中断_開始時刻),$ISBLANK(中断_終了時刻)),$ROUND(($DATEDIF(実績開始日時,実績終了日時,\"N\")-$IF($ISBLANK(休憩時間（分）),0,休憩時間（分）))/60,1),$IF($OR($ISBLANK(中断_開始時刻),$ISBLANK(中断_終了時刻)),\"\",$ROUND(($DATEDIF(実績開始日時,実績終了日時,\"N\")-$DATEDIF(中断_開始時刻,中断_終了時刻,\"N\")-$IF($ISBLANK(休憩時間（分）),0,休憩時間（分）))/60,1))))",
+            "FormulaMapping": "{\"NumB\":\"休憩時間（分）\",\"DateC\":\"中断_開始時刻\",\"DateD\":\"中断_終了時刻\",\"DateA\":\"実績開始日時\",\"DateB\":\"実績終了日時\"}",
+            "Id": 2
+          },
+          {
+            "CalculationMethod": "Extended",
+            "Target": "CompletionTime",
+            "FormulaScript": "$IF($ISBLANK(開始予定時刻),\"\",$DATETIME($YEAR(開始予定時刻),$MONTH(開始予定時刻),$DAY(開始予定時刻),$HOUR(開始予定時刻),$MINUTE(開始予定時刻)+60,$SECOND(開始予定時刻)))",
+            "FormulaMapping": "{\"StartTime\":\"開始予定時刻\"}",
+            "Disabled": true,
+            "Id": 3
+          }
+        ],
+        "Processes": [
+          {
+            "Id": 1,
+            "Name": "開始",
+            "DisplayName": "開始",
+            "CurrentStatus": 100,
+            "ChangedStatus": 200,
+            "View": {
+              "Id": 0,
+              "ApiColumnKeyDisplayType": 0,
+              "ApiColumnValueDisplayType": 0,
+              "CalendarSiteId": 0,
+              "ApiDataType": 0
+            },
+            "DataChanges": [
+              {
+                "Id": 1,
+                "Type": "InputDateTime",
+                "ColumnName": "DateA",
+                "BaseDateTime": "CurrentTime",
+                "Value": "0,Minutes",
+                "ValueFormulaNotUseDisplayName": false,
+                "ValueFormulaIsDisplayError": false
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "Name": "中断",
+            "DisplayName": "中断",
+            "CurrentStatus": 200,
+            "ChangedStatus": 910,
+            "View": {
+              "Id": 0,
+              "ApiColumnKeyDisplayType": 0,
+              "ApiColumnValueDisplayType": 0,
+              "CalendarSiteId": 0,
+              "ApiDataType": 0
+            },
+            "DataChanges": [
+              {
+                "Id": 1,
+                "Type": "InputDateTime",
+                "ColumnName": "DateC",
+                "BaseDateTime": "CurrentTime",
+                "Value": "0,Minutes",
+                "ValueFormulaNotUseDisplayName": false,
+                "ValueFormulaIsDisplayError": false
+              }
+            ]
+          },
+          {
+            "Id": 3,
+            "Name": "再開",
+            "DisplayName": "再開",
+            "CurrentStatus": 910,
+            "ChangedStatus": 200,
+            "View": {
+              "Id": 0,
+              "ApiColumnKeyDisplayType": 0,
+              "ApiColumnValueDisplayType": 0,
+              "CalendarSiteId": 0,
+              "ApiDataType": 0
+            },
+            "DataChanges": [
+              {
+                "Id": 1,
+                "Type": "InputDateTime",
+                "ColumnName": "DateD",
+                "BaseDateTime": "CurrentTime",
+                "Value": "0,Minutes",
+                "ValueFormulaNotUseDisplayName": false,
+                "ValueFormulaIsDisplayError": false
+              }
+            ]
+          },
+          {
+            "Id": 4,
+            "Name": "完了_実施中",
+            "DisplayName": "完了",
+            "CurrentStatus": 200,
+            "ChangedStatus": 900,
+            "View": {
+              "Id": 0,
+              "ApiColumnKeyDisplayType": 0,
+              "ApiColumnValueDisplayType": 0,
+              "CalendarSiteId": 0,
+              "ApiDataType": 0
+            },
+            "DataChanges": [
+              {
+                "Id": 1,
+                "Type": "InputDateTime",
+                "ColumnName": "DateB",
+                "BaseDateTime": "CurrentTime",
+                "Value": "0,Minutes",
+                "ValueFormulaNotUseDisplayName": false,
+                "ValueFormulaIsDisplayError": false
+              }
+            ]
+          },
+          {
+            "Id": 5,
+            "Name": "完了_中断",
+            "DisplayName": "完了",
+            "CurrentStatus": 910,
+            "ChangedStatus": 900,
+            "View": {
+              "Id": 0,
+              "ApiColumnKeyDisplayType": 0,
+              "ApiColumnValueDisplayType": 0,
+              "CalendarSiteId": 0,
+              "ApiDataType": 0
+            },
+            "DataChanges": [
+              {
+                "Id": 1,
+                "Type": "InputDateTime",
+                "ColumnName": "DateB",
+                "BaseDateTime": "CurrentTime",
+                "Value": "0,Minutes",
+                "ValueFormulaNotUseDisplayName": false,
+                "ValueFormulaIsDisplayError": false
+              },
+              {
+                "Id": 2,
+                "Type": "InputDateTime",
+                "ColumnName": "DateD",
+                "BaseDateTime": "CurrentTime",
+                "Value": "0,Minutes",
+                "ValueFormulaNotUseDisplayName": false,
+                "ValueFormulaIsDisplayError": false
+              }
+            ]
+          },
+          {
+            "Id": 6,
+            "Name": "一括コピー",
+            "DisplayName": "一括コピー",
+            "CurrentStatus": -1,
+            "ChangedStatus": 0,
+            "Description": "一覧で選択したタスクを、新しいタスクとして一括コピーします。",
+            "Tooltip": "選択したタスクを一括コピー",
+            "Icon": "content_copy",
+            "ConfirmationMessage": "選択したタスクをコピーします。よろしいですか？",
+            "ActionType": 10,
+            "AllowBulkProcessing": true,
+            "View": {
+              "Id": 0,
+              "ApiColumnKeyDisplayType": 0,
+              "ApiColumnValueDisplayType": 0,
+              "CalendarSiteId": 0,
+              "ApiDataType": 0
+            },
+            "Disabled": true
+          }
+        ],
+        "ViewLatestId": 2,
+        "Views": [
+          {
+            "Id": 1,
+            "Name": "今日",
+            "GridColumns": [
+              "IssueId",
+              "ClassD",
+              "Status",
+              "Title",
+              "StartTime",
+              "CompletionTime",
+              "Body",
+              "ClassA",
+              "DateA",
+              "DateB",
+              "NumA",
+              "Comments",
+              "Updator",
+              "UpdatedTime"
+            ],
+            "ColumnFilterHash": {
+              "StartTime": "[\"Today\"]"
+            },
+            "ColumnSorterHash": {
+              "StartTime": "asc"
+            },
+            "ApiColumnKeyDisplayType": 0,
+            "ApiColumnValueDisplayType": 0,
+            "CalendarSiteId": 0,
+            "CalendarTimePeriod": "Monthly",
+            "CalendarFromTo": "StartTime-CompletionTime",
+            "CrosstabGroupByX": "Status",
+            "CrosstabGroupByY": "ClassA",
+            "CrosstabAggregateType": "Total",
+            "CrosstabValue": "NumB",
+            "CrosstabTimePeriod": "Monthly",
+            "KambanAggregateType": "Total",
+            "ApiDataType": 0
+          },
+          {
+            "Id": 2,
+            "Name": "カレンダーtoday",
+            "DefaultMode": "Calendar",
+            "GridColumns": [
+              "IssueId",
+              "ClassD",
+              "Status",
+              "Title",
+              "StartTime",
+              "CompletionTime",
+              "Body",
+              "ClassA",
+              "DateA",
+              "DateB",
+              "NumA",
+              "Comments",
+              "Updator",
+              "UpdatedTime"
+            ],
+            "ColumnFilterHash": {
+              "StartTime": "[\"Today\"]"
+            },
+            "ApiColumnKeyDisplayType": 0,
+            "ApiColumnValueDisplayType": 0,
+            "CalendarSiteId": 0,
+            "CalendarTimePeriod": "Monthly",
+            "CalendarFromTo": "StartTime-CompletionTime",
+            "CalendarViewType": "timeGridDay",
+            "CalendarShowStatus": true,
+            "CrosstabGroupByX": "Status",
+            "CrosstabGroupByY": "ClassA",
+            "CrosstabAggregateType": "Total",
+            "CrosstabValue": "NumB",
+            "CrosstabTimePeriod": "Monthly",
+            "KambanAggregateType": "Total",
+            "ApiDataType": 0
+          }
+        ],
+        "Styles": [
+          {
+            "Title": "編集画面スタイル",
+            "New": true,
+            "Edit": true,
+            "Body": "/*変種画面で一括処理プロセスボタン非表示*/\n#Process_6{\n  display:none!important;\n}",
+            "Id": 1
+          },
+          {
+            "Title": "計測ボタン（一覧・編集）",
+            "Index": true,
+            "Body": ".task-timer-button {\n    min-width: 64px;\n    min-height: 32px;\n    padding: 4px 12px;\n    border: 1px solid transparent;\n    border-radius: 4px;\n    color: #fff;\n    font: inherit;\n    font-weight: 600;\n    cursor: pointer;\n    white-space: nowrap;\n}\n.task-timer-start,\n#Process_1 {\n    background: #2e7d32 !important;\n    border-color: #1b5e20 !important;\n    color: #fff !important;\n}\n.task-timer-finish,\n#Process_4,\n#Process_5 {\n    background: #ef6c00 !important;\n    border-color: #e65100 !important;\n    color: #161616 !important;\n    font-weight: 700;\n}\n/* Existing editor labels are 開始/完了; add the same symbols before them. */\n#Process_1::before,\n#Process_4::before,\n#Process_5::before { font-family: Arial, sans-serif; }\n#Process_1::before { content: '▶'; margin-right: .4em; }\n#Process_4::before,\n#Process_5::before { content: '■'; margin-right: .4em; }\n.task-timer-button:hover { filter: brightness(.92); }\n.task-timer-button:focus-visible { outline: 3px solid #146ac0; outline-offset: 2px; }\n.task-timer-button:disabled { opacity: .55; cursor: wait; }\n.task-timer-label { display: inline-block; min-width: 64px; text-align: center; white-space: nowrap; }\n.task-timer-done { color: #555; background: #eee; border-radius: 4px; padding: 5px 0; }\n.task-timer-message { margin: 8px 0; padding: 8px 12px; background: #edf5ff; color: #193958; }\n.task-timer-error { background: #fff0e9; color: #842500; }\n",
+            "Id": 2
+          }
+        ],
+        "Scripts": [
+          {
+            "Title": "CL-01 終了予定日時自動設定",
+            "New": true,
+            "Edit": true,
+            "Body": "(function () {\n    'use strict';\n\n    const ADD_MINUTES = 60;\n\n    $p.on('change', 'StartTime', function () {\n        const startControl = $p.getControl('StartTime');\n        const completionControl =\n            $p.getControl('CompletionTime');\n\n        const startTime =\n            parseDateTime(startControl.val());\n\n        // 開始予定日時が空欄または不正なら何もしない\n        if (!startTime) {\n            return;\n        }\n\n        const completionValue =\n            completionControl.val();\n\n        const completionTime =\n            parseDateTime(completionValue);\n\n        // 終了予定日時が入力済みで、\n        // 開始予定日時より早くなければ上書きしない\n        if (\n            completionValue &&\n            completionTime &&\n            completionTime >= startTime\n        ) {\n            return;\n        }\n\n        // 空欄または開始予定日時より早い場合\n        const newCompletionTime = new Date(\n            startTime.getTime() +\n                ADD_MINUTES * 60 * 1000\n        );\n\n        $p.set(\n            completionControl,\n            formatDateTime(newCompletionTime)\n        );\n    });\n\n    function parseDateTime(value) {\n        const match = String(value || '')\n            .trim()\n            .match(\n                /^(\\d{4})[\\/-](\\d{1,2})[\\/-](\\d{1,2})(?:[ T](\\d{1,2}):(\\d{2})(?::(\\d{2}))?)?$/\n            );\n\n        if (!match) {\n            return null;\n        }\n\n        const year = Number(match[1]);\n        const month = Number(match[2]);\n        const day = Number(match[3]);\n        const hour = Number(match[4] || 0);\n        const minute = Number(match[5] || 0);\n        const second = Number(match[6] || 0);\n\n        const date = new Date(\n            year,\n            month - 1,\n            day,\n            hour,\n            minute,\n            second\n        );\n\n        // 2月30日などの不正な日時を除外\n        if (\n            date.getFullYear() !== year ||\n            date.getMonth() !== month - 1 ||\n            date.getDate() !== day ||\n            date.getHours() !== hour ||\n            date.getMinutes() !== minute ||\n            date.getSeconds() !== second\n        ) {\n            return null;\n        }\n\n        return date;\n    }\n\n    function formatDateTime(date) {\n        return (\n            date.getFullYear() +\n            '/' +\n            pad(date.getMonth() + 1) +\n            '/' +\n            pad(date.getDate()) +\n            ' ' +\n            pad(date.getHours()) +\n            ':' +\n            pad(date.getMinutes())\n        );\n    }\n\n    function pad(value) {\n        return String(value).padStart(2, '0');\n    }\n})();",
+            "Id": 1
+          },
+          {
+            "Title": "CL-02 タスク生成コマンド",
+            "Index": true,
+            "Body": "(function () {\n    'use strict';\n\n    const BULK_COPY_CONTROL_ID = 'TaskBulkCopyCommand';\n    const CREATE_RECURRING_CONTROL_ID = 'CreateRecurringTasksCommand';\n    const REFRESH_CONTROL_ID = 'TaskCommandsRefreshCommand';\n\n    // ボタン色\n    if ($('#TaskCommandButtonStyles').length === 0) {\n        $('<style/>', {\n            id: 'TaskCommandButtonStyles',\n            text: `\n                /* 選択タスクを一括コピー：オレンジ */\n                #TaskBulkCopyCommand {\n                    background: #ef6c00 !important;\n                    border-color: #e65100 !important;\n                    color: #ffffff !important;\n                }\n                \n                #TaskBulkCopyCommand:hover {\n                    background: #e65100 !important;\n                    border-color: #bf360c !important;\n                }\n\n                /* 本日の定例タスクを作成：緑 */\n                #CreateRecurringTasksCommand {\n                    background: #2e7d32 !important;\n                    border-color: #1b5e20 !important;\n                    color: #ffffff !important;\n                }\n\n                #CreateRecurringTasksCommand:hover {\n                    background: #1b5e20 !important;\n                    border-color: #124116 !important;\n                }\n            `\n        }).appendTo('head');\n    }\n\n    const $commands = $('#MainCommands');\n    if ($commands.length === 0) {\n        return;\n    }\n\n    let running = false;\n\n    const $bulkCopyButton = createCommandButton(\n        BULK_COPY_CONTROL_ID,\n        '選択タスクを一括コピー',\n        '選択したタスクを、新しいタスクとして一括コピーします。よろしいですか？'\n    );\n\n    const $createRecurringButton = createCommandButton(\n        CREATE_RECURRING_CONTROL_ID,\n        '本日の定例タスクを作成',\n        '定例タスクマスタから、本日のタスクを一括作成します。よろしいですか？'\n    );\n\n    const $refreshButton = $('<button/>', {\n        id: REFRESH_CONTROL_ID,\n        type: 'button'\n    })\n        .attr('data-action', 'GridRows')\n        .attr('data-method', 'post')\n        .addClass('hidden')\n        .hide();\n\n    $commands.append($bulkCopyButton, $createRecurringButton, $refreshButton);\n\n    $p.events['ajax_after_done_' + BULK_COPY_CONTROL_ID] = refreshGrid;\n    $p.events['ajax_after_done_' + CREATE_RECURRING_CONTROL_ID] = refreshGrid;\n    $p.events['ajax_after_always_' + BULK_COPY_CONTROL_ID] = resetOnFailure;\n    $p.events['ajax_after_always_' + CREATE_RECURRING_CONTROL_ID] = resetOnFailure;\n    $p.events['ajax_after_always_' + REFRESH_CONTROL_ID] = function () {\n        running = false;\n    };\n\n    function createCommandButton(id, text, confirmationMessage) {\n        return $('<button/>', {\n            id: id,\n            type: 'button',\n            text: text,\n            title: text\n        })\n            .attr('data-action', 'GridRows')\n            .attr('data-method', 'post')\n            .addClass('button button-icon button-positive')\n            .on('click', function () {\n                if (running) {\n                    return;\n                }\n                if (!window.confirm(confirmationMessage)) {\n                    return;\n                }\n                running = true;\n                const result = $p.send($(this));\n                if (result === false) {\n                    running = false;\n                }\n            });\n    }\n\n    function refreshGrid() {\n        window.setTimeout(function () {\n            $p.send($refreshButton, undefined, true, false);\n        }, 0);\n    }\n\n    function resetOnFailure(args) {\n        if (args.ret !== 0) {\n            running = false;\n        }\n    }\n})();",
+            "Id": 2
+          },
+          {
+            "Title": "CL_3 ",
+            "Index": true,
+            "Calendar": true,
+            "Body": "(function () {\n    'use strict';\n\n    const targetViewId = '2';\n    let handledCalendar = null;\n\n    function moveToTodayOnce() {\n        const viewSelector =\n            document.getElementById('ViewSelector');\n\n        if (\n            !viewSelector ||\n            String(viewSelector.value) !== targetViewId\n        ) {\n            handledCalendar = null;\n            return;\n        }\n\n        const calendar =\n            document.getElementById('FullCalendar');\n\n        const todayButton =\n            calendar &&\n            calendar.querySelector('.fc-today-button');\n\n        if (\n            !calendar ||\n            !todayButton ||\n            handledCalendar === calendar\n        ) {\n            return;\n        }\n\n        // このカレンダーでは一度だけ実行\n        handledCalendar = calendar;\n\n        if (!todayButton.disabled) {\n            todayButton.click();\n        }\n    }\n\n    document.addEventListener('change', function (event) {\n        if (event.target.id === 'ViewSelector') {\n            handledCalendar = null;\n            window.setTimeout(moveToTodayOnce, 0);\n        }\n    });\n\n    const observer = new MutationObserver(function () {\n        moveToTodayOnce();\n    });\n\n    observer.observe(document.body, {\n        childList: true,\n        subtree: true\n    });\n\n    window.setTimeout(moveToTodayOnce, 0);\n})();",
+            "Id": 3
+          },
+          {
+            "Title": "CL-04 一覧から開始・終了",
+            "Index": true,
+            "Body": "(function () {\n    'use strict';\n    if (window.taskGridTimerInstalled) return;\n    window.taskGridTimerInstalled = true;\n    const refreshId = 'TaskGridTimerRefreshCommand';\n    let busy = false;\n    function message(text, error) {\n        let box = document.getElementById('TaskGridTimerMessage');\n        if (!box) {\n            box = document.createElement('div');\n            box.id = 'TaskGridTimerMessage';\n            box.setAttribute('role', 'status');\n            box.setAttribute('aria-live', 'polite');\n            const grid = document.getElementById('Grid');\n            if (grid) grid.parentNode.insertBefore(box, grid);\n            else document.getElementById('MainForm').prepend(box);\n        }\n        box.className = error ? 'task-timer-message task-timer-error' : 'task-timer-message';\n        box.textContent = text;\n    }\n    function lock(value) {\n        busy = value;\n        document.querySelectorAll('.task-timer-button').forEach(function (button) {\n            button.disabled = value;\n        });\n    }\n    function refresh(text, error) {\n        message(text, error);\n        let control = $('#' + refreshId);\n        if (!control.length) {\n            control = $('<button/>', { id: refreshId, type: 'button' })\n                .attr('data-action', 'GridRows').attr('data-method', 'post').hide()\n                .appendTo('#MainForm');\n        }\n        const scroll = { x: window.scrollX, y: window.scrollY };\n        let settled = false;\n        const watchdog = window.setTimeout(function () {\n            if (!settled) {\n                message(text + ' 一覧の再取得が完了しません。再読み込みして結果を確認してください。', true);\n                // Keep controls locked: never blindly repeat a possibly successful update.\n            }\n        }, 30000);\n        $p.events['ajax_after_done_' + refreshId] = function (args) {\n            if (args.ret !== 0) return;\n            settled = true;\n            window.clearTimeout(watchdog);\n            lock(false);\n            message(text, error);\n            window.scrollTo(scroll.x, scroll.y);\n        };\n        $p.events['ajax_after_always_' + refreshId] = function (args) {\n            if (args.ret !== 0 && !settled) {\n                settled = true;\n                window.clearTimeout(watchdog);\n                message(text + ' 一覧を再読み込みして結果を確認してください。', true);\n            }\n        };\n        if ($p.send(control, 'MainForm', true, false) === false) {\n            settled = true;\n            window.clearTimeout(watchdog);\n            message(text + ' 一覧を再読み込みして結果を確認してください。', true);\n        }\n    }\n    // Capture phase prevents the normal row-click navigation before it reaches jQuery.\n    document.addEventListener('click', function (event) {\n        const button = event.target.closest && event.target.closest('.task-timer-button');\n        if (!button) return;\n        event.preventDefault();\n        event.stopImmediatePropagation();\n        if (busy || button.disabled) return;\n        if ($p.formChanged || String($('#EditOnGrid').val() || '0') !== '0') {\n            message('編集内容を保存し、一覧の編集モードを終了してから操作してください。', true);\n            return;\n        }\n        const id = Number(button.dataset.recordId);\n        const siteId = Number(button.dataset.siteId);\n        const processId = Number(button.dataset.processId);\n        const stamp = Number(button.dataset.stamp);\n        if (!(id > 0) || !(siteId > 0) || !isFinite(stamp) ||\n            (processId !== 1 && processId !== 4)) return;\n        const row = button.closest('tr');\n        const title = row && row.querySelector('[data-name=\"Title\"], .grid-title');\n        const name = title ? title.textContent.trim() : 'ID ' + id;\n        if (processId === 4 && !window.confirm('「' + name + '」の計測を終了し、タスクを完了にしますか？')) return;\n        lock(true);\n        button.textContent = '処理中…';\n        message('ID ' + id + ' を更新しています。');\n        let completed = false;\n        const watchdog = window.setTimeout(function () {\n            if (!completed) message('応答を確認できません。連続操作せず、一覧を再読み込みして結果を確認してください。', true);\n        }, 30000);\n        function finish(text, error) {\n            if (completed) return;\n            completed = true;\n            window.clearTimeout(watchdog);\n            refresh(text, error);\n        }\n        try {\n            $p.apiUpdate({\n                id: id,\n                data: {\n                    ApiVersion: 1.1,\n                    ProcessId: processId,\n                    TaskGridTimer: { SiteId: siteId, Stamp: stamp }\n                },\n                done: function (result) {\n                    if (result && Number(result.StatusCode) === 200) {\n                        finish('ID ' + id + (processId === 1 ? ' の計測を開始しました。' : ' を終了し、完了にしました。') +\n                            ' 現在の絞り込み条件によっては一覧から非表示になります。', false);\n                    } else {\n                        finish('更新できませんでした。' + ((result && result.Message) || '最新の状態と権限を確認してください。'), true);\n                    }\n                },\n                fail: function (xhr) {\n                    const detail = xhr && xhr.responseJSON && xhr.responseJSON.Message;\n                    finish(detail || '更新結果を確認できません。一覧の最新状態を確認してください（自動再送はしません）。', true);\n                }\n            });\n        } catch (e) {\n            finish('計測操作でエラーが発生しました。一覧の最新状態を確認してください。', true);\n        }\n    }, true);\n})();\n",
+            "Id": 4
+          }
+        ],
+        "ServerScripts": [
+          {
+            "Title": "SS-01 一括コピー",
+            "Name": "SS01_TASK_BULK_COPY",
+            "BeforeOpeningPage": true,
+            "Body": "(function () {\n    'use strict';\n\n    // 設計書 01_サイト構成から設定\n    const TASK_SITE_ID = Number(context.SiteId);\n    // 一覧画面の一括処理コマンドと、対象のプロセスID\n    const CONTROL_ID = 'BulkProcessCommand';\n    const PROCESS_ID = '6';\n    const MAX_COPY_COUNT = 50;\n\n    // 通常の一覧表示では何もせず終了する\n    if (context.ControlId !== CONTROL_ID) {\n        return;\n    }\n\n    let bulkProcessingItems;\n    try {\n        bulkProcessingItems = context.Forms.Item.get('BulkProcessingItems');\n    } catch (e) {\n        context.AddMessage('一括コピーのプロセスIDを取得できません。', 'alert-error');\n        context.Log(e.stack || String(e));\n        return;\n    }\n\n    // 一覧画面で「一括コピー」（プロセスID 6）が実行された場合だけ処理する\n    if (String(bulkProcessingItems) !== PROCESS_ID) {\n        return;\n    }\n\n    const selectedIds = [];\n    for (const selectedId of grid.SelectedIds()) {\n        selectedIds.push(Number(selectedId));\n    }\n\n    if (selectedIds.length === 0) {\n        context.AddMessage('コピーするタスクを選択してください。');\n        return;\n    }\n\n    if (selectedIds.length > MAX_COPY_COUNT) {\n        context.Error(\n            '一度にコピーできる件数は' + MAX_COPY_COUNT + '件までです。選択件数：' + selectedIds.length\n        );\n        return;\n    }\n\n    let successCount = 0;\n    const failedIds = [];\n    const copyStartTime = new Date();\n    const copyCompletionTime = new Date(copyStartTime.getTime() + 60 * 60 * 1000);\n\n    for (const selectedId of selectedIds) {\n        try {\n            const source = firstOrNull(items.Get(selectedId));\n            if (!source) {\n                failedIds.push(selectedId);\n                context.Log('一括コピー：元タスクを取得できません。ID=' + selectedId);\n                continue;\n            }\n\n            const target = items.NewIssue();\n\n            // タスクの定義情報だけを引き継ぐ。「- コピー」は付与しない\n            target.Title = source.Title;\n            target.StartTime = new Date(copyStartTime.getTime());\n            target.CompletionTime = new Date(copyCompletionTime.getTime());\n            target.Body = source.Body;\n            target.ClassA = source.ClassA;\n            target.CheckA = source.CheckA;\n            target.Owner = source.Owner;\n\n            // 実績・自動生成情報は必ず初期化する\n            target.DateA = null;\n            target.DateB = null;\n            target.DateC = null;\n            target.DateD = null;\n            target.NumA = null;\n            target.NumB = null;\n            target.ClassB = '';\n            target.ClassC = '';\n            target.CheckB = false;\n\n            // 新規タスクの状況は必ず「開始前」にする\n            target.Status = 100;\n\n            if (items.Create(TASK_SITE_ID, target)) {\n                successCount += 1;\n                context.Log(\n                    '一括コピー：作成成功。元ID=' + selectedId + ' 新ID=' + target.IssueId\n                );\n            } else {\n                failedIds.push(selectedId);\n                context.Log('一括コピー：作成失敗。元ID=' + selectedId);\n            }\n        } catch (e) {\n            failedIds.push(selectedId);\n            context.AddMessage(\n                '一括コピーでエラーが発生しました。元ID=' + selectedId,\n                'alert-error'\n            );\n            context.Log('一括コピー：例外。元ID=' + selectedId + ' 詳細=' + String(e));\n            context.Log(e.stack || String(e));\n        }\n    }\n\n    let message = 'タスクを' + successCount + '件コピーしました。';\n    if (failedIds.length > 0) {\n        message += ' 失敗ID：' + failedIds.join(', ');\n    }\n    context.AddMessage(message);\n\n    function firstOrNull(sequence) {\n        if (!sequence) {\n            return null;\n        }\n        for (const value of sequence) {\n            return value;\n        }\n        return null;\n    }\n})();",
+            "TryCatch": true,
+            "Disabled": true,
+            "Id": 1
+          },
+          {
+            "Title": "SS-01 タスク生成コマンド",
+            "Name": "SS01_TASK_COMMANDS",
+            "BeforeOpeningPage": true,
+            "Body": "(function () {\n    'use strict';\n    // @siteid list start@\n    const TASK_SITE_ID = Number(context.SiteId);\n    const RECURRING_MASTER_SITE_ID = 9750;\n    // @siteid list end@\n    const BULK_COPY_CONTROL_ID = 'TaskBulkCopyCommand';\n    const CREATE_RECURRING_CONTROL_ID = 'CreateRecurringTasksCommand';\n    const MAX_COPY_COUNT = 50;\n    const MAX_MASTER_COUNT = 50;\n    const DEFAULT_DURATION_MINUTES = 60;\n\n    if (context.ControlId === BULK_COPY_CONTROL_ID) {\n        bulkCopySelectedTasks();\n        return;\n    }\n\n    if (context.ControlId === CREATE_RECURRING_CONTROL_ID) {\n        createTodayRecurringTasks();\n    }\n\n    function bulkCopySelectedTasks() {\n        const selectedIds = [];\n        for (const selectedId of grid.SelectedIds()) {\n            selectedIds.push(Number(selectedId));\n        }\n\n        if (selectedIds.length === 0) {\n            context.AddMessage('コピーするタスクを選択してください。', 'alert-error');\n            return;\n        }\n\n        if (selectedIds.length > MAX_COPY_COUNT) {\n            context.AddMessage(\n                '一度にコピーできる件数は' + MAX_COPY_COUNT + '件までです。選択件数：' + selectedIds.length,\n                'alert-error'\n            );\n            return;\n        }\n\n        let successCount = 0;\n        const failedIds = [];\n        const copyStartTime = new Date();\n        const copyCompletionTime = new Date(\n            copyStartTime.getTime() + DEFAULT_DURATION_MINUTES * 60 * 1000\n        );\n\n        for (const selectedId of selectedIds) {\n            try {\n                const source = firstOrNull(items.Get(selectedId));\n                if (!source) {\n                    failedIds.push(selectedId);\n                    context.Log('一括コピー：元タスクを取得できません。ID=' + selectedId);\n                    continue;\n                }\n\n                const target = items.NewIssue();\n                target.Title = source.Title;\n                target.StartTime = new Date(copyStartTime.getTime());\n                target.CompletionTime = new Date(copyCompletionTime.getTime());\n                target.Body = source.Body;\n                target.ClassA = source.ClassA;\n                target.CheckA = source.CheckA;\n                if (Number(source.Owner) > 0) {\n                    target.Owner = Number(source.Owner);\n                }\n\n                clearActualAndGenerationFields(target);\n                target.Status = 100;\n\n                if (items.Create(TASK_SITE_ID, target)) {\n                    successCount += 1;\n                    context.Log(\n                        '一括コピー：作成成功。元ID=' + selectedId + ' 新ID=' + target.IssueId\n                    );\n                }\n                else {\n                    failedIds.push(selectedId);\n                    context.Log('一括コピー：作成失敗。元ID=' + selectedId);\n                }\n            }\n            catch (e) {\n                failedIds.push(selectedId);\n                context.Log(\n                    '一括コピー：例外。元ID=' + selectedId + ' 詳細=' + String(e)\n                );\n                context.Log(e.stack || String(e));\n            }\n        }\n\n        let message = 'タスクを' + successCount + '件コピーしました。';\n        if (failedIds.length > 0) {\n            message += ' 失敗ID：' + failedIds.join(', ');\n        }\n        context.AddMessage(\n            message,\n            failedIds.length > 0 ? 'alert-error' : 'alert-information'\n        );\n    }\n\n    function createTodayRecurringTasks() {\n        const activeView = {\n            View: {\n                ColumnFilterHash: {\n                    CheckA: '1'\n                },\n                ColumnSorterHash: {\n                    ClassB: 'asc',\n                    ResultId: 'asc'\n                }\n            }\n        };\n\n        const activeCount = Number(\n            items.Count(RECURRING_MASTER_SITE_ID, JSON.stringify(activeView))\n        );\n        if (activeCount > MAX_MASTER_COUNT) {\n            context.AddMessage(\n                '有効な定例タスクは' + MAX_MASTER_COUNT + '件以内にしてください。現在：' + activeCount + '件',\n                'alert-error'\n            );\n            return;\n        }\n\n        activeView.PageSize = MAX_MASTER_COUNT;\n        const masterRecords = items.Get(\n            RECURRING_MASTER_SITE_ID,\n            JSON.stringify(activeView)\n        ) || [];\n\n        const today = new Date(utilities.Today());\n        const todayKey = formatDateKey(today);\n        const weekday = String(today.getDay());\n        const candidates = [];\n        const validationErrors = [];\n        let excludedCount = 0;\n\n        for (const source of masterRecords) {\n            const masterId = Number(source.ResultId);\n            if (!isApplicableDate(source, todayKey) || !isApplicableWeekday(source.ClassC, weekday)) {\n                excludedCount += 1;\n                continue;\n            }\n\n            const title = String(source.Title || '').trim();\n            const time = parseTime(source.ClassB);\n            const duration = Number(source.NumA);\n\n            if (!masterId) {\n                validationErrors.push('マスタIDを取得できないレコードがあります。');\n                continue;\n            }\n            if (!title) {\n                validationErrors.push('ID ' + masterId + '：タスク名が空です。');\n                continue;\n            }\n            if (!time) {\n                validationErrors.push('ID ' + masterId + '：開始時刻はHH:mm形式で入力してください。');\n                continue;\n            }\n            if (!isFinite(duration) || duration < 1 || Math.floor(duration) !== duration) {\n                validationErrors.push('ID ' + masterId + '：所要時間は1以上の整数で入力してください。');\n                continue;\n            }\n\n            candidates.push({\n                source: source,\n                masterId: masterId,\n                title: title,\n                hour: time.hour,\n                minute: time.minute,\n                duration: duration\n            });\n        }\n\n        if (validationErrors.length > 0) {\n            context.AddMessage(\n                '定例タスクマスタに入力エラーがあります。タスクは作成していません。 ' +\n                    validationErrors.join(' / '),\n                'alert-error'\n            );\n            return;\n        }\n\n        let createdCount = 0;\n        let skippedCount = 0;\n        const failedIds = [];\n\n        for (const candidate of candidates) {\n            const generationKey = 'RECUR:' + todayKey + ':' + candidate.masterId;\n\n            if (generationKeyExists(generationKey)) {\n                skippedCount += 1;\n                continue;\n            }\n\n            try {\n                const source = candidate.source;\n                const startTime = new Date(today.getTime());\n                startTime.setHours(candidate.hour, candidate.minute, 0, 0);\n                const completionTime = new Date(\n                    startTime.getTime() + candidate.duration * 60 * 1000\n                );\n\n                const target = items.NewIssue();\n                target.Title = candidate.title;\n                target.StartTime = startTime;\n                target.CompletionTime = completionTime;\n                target.Body = source.Body;\n                target.ClassA = source.ClassA;\n                target.CheckA = String(source.ClassA || '').trim() !== '';\n                if (Number(source.Owner) > 0) {\n                    target.Owner = Number(source.Owner);\n                }\n\n                clearActualAndGenerationFields(target);\n                target.ClassB = generationKey;\n                target.ClassC = String(candidate.masterId);\n                target.CheckB = true;\n                target.Status = 100;\n\n                if (items.Create(TASK_SITE_ID, target)) {\n                    createdCount += 1;\n                    context.Log(\n                        '定例タスク生成：作成成功。マスタID=' +\n                            candidate.masterId +\n                            ' 新ID=' +\n                            target.IssueId +\n                            ' 生成キー=' +\n                            generationKey\n                    );\n                }\n                else {\n                    failedIds.push(candidate.masterId);\n                    context.Log(\n                        '定例タスク生成：作成失敗。マスタID=' + candidate.masterId\n                    );\n                }\n            }\n            catch (e) {\n                failedIds.push(candidate.masterId);\n                context.Log(\n                    '定例タスク生成：例外。マスタID=' +\n                        candidate.masterId +\n                        ' 詳細=' +\n                        String(e)\n                );\n                context.Log(e.stack || String(e));\n            }\n        }\n\n        let message =\n            '本日の定例タスク：作成' +\n            createdCount +\n            '件、作成済みのためスキップ' +\n            skippedCount +\n            '件、曜日・期間対象外' +\n            excludedCount +\n            '件。';\n        if (failedIds.length > 0) {\n            message += ' 作成失敗マスタID：' + failedIds.join(', ');\n        }\n        context.AddMessage(\n            message,\n            failedIds.length > 0 ? 'alert-error' : 'alert-information'\n        );\n    }\n\n    function clearActualAndGenerationFields(target) {\n        target.DateA = null;\n        target.DateB = null;\n        target.DateC = null;\n        target.DateD = null;\n        target.NumA = null;\n        target.NumB = null;\n        target.ClassB = '';\n        target.ClassC = '';\n        target.CheckB = false;\n    }\n\n    function generationKeyExists(generationKey) {\n        const request = {\n            PageSize: 1,\n            View: {\n                ColumnFilterHash: {\n                    ClassB: generationKey\n                },\n                ColumnFilterSearchTypes: {\n                    ClassB: 'ExactMatch'\n                }\n            }\n        };\n        const records = items.Get(TASK_SITE_ID, JSON.stringify(request));\n        return records && records.length > 0;\n    }\n\n    function isApplicableDate(source, todayKey) {\n        if (utilities.InRange(source.DateA)) {\n            const fromKey = formatDateKey(new Date(source.DateA));\n            if (fromKey > todayKey) {\n                return false;\n            }\n        }\n        if (utilities.InRange(source.DateB)) {\n            const toKey = formatDateKey(new Date(source.DateB));\n            if (toKey < todayKey) {\n                return false;\n            }\n        }\n        return true;\n    }\n\n    function isApplicableWeekday(value, weekday) {\n        const selected = parseMultipleSelections(value);\n        return selected.length === 0 || selected.indexOf(weekday) >= 0;\n    }\n\n    function parseMultipleSelections(value) {\n        const text = String(value || '').trim();\n        if (!text) {\n            return [];\n        }\n        try {\n            const parsed = JSON.parse(text);\n            if (Array.isArray(parsed)) {\n                return parsed.map(function (item) {\n                    return String(item);\n                });\n            }\n        }\n        catch (e) {\n            context.Log('実行曜日のJSON解析に失敗しました。値=' + text);\n        }\n        return text.split(',').map(function (item) {\n            return item.trim();\n        }).filter(function (item) {\n            return item !== '';\n        });\n    }\n\n    function parseTime(value) {\n        const match = String(value || '').trim().match(/^([01]\\d|2[0-3]):([0-5]\\d)$/);\n        if (!match) {\n            return null;\n        }\n        return {\n            hour: Number(match[1]),\n            minute: Number(match[2])\n        };\n    }\n\n    function formatDateKey(date) {\n        return (\n            String(date.getFullYear()) +\n            pad(date.getMonth() + 1) +\n            pad(date.getDate())\n        );\n    }\n\n    function pad(value) {\n        return String(value).padStart(2, '0');\n    }\n\n    function firstOrNull(sequence) {\n        if (!sequence) {\n            return null;\n        }\n        for (const value of sequence) {\n            return value;\n        }\n        return null;\n    }\n})();",
+            "TryCatch": true,
+            "Id": 2
+          },
+          {
+            "Title": "SS-03 一覧の計測ボタン",
+            "Name": "TASK_GRID_TIMER_ROW",
+            "BeforeOpeningRow": true,
+            "Body": "(function () {\n    'use strict';\n    if (!columns.ClassD) return;\n    const id = Number(model.IssueId);\n    const status = Number(model.Status);\n    const started = utilities.InRange(model.DateA);\n    const ended = utilities.InRange(model.DateB);\n    let html;\n    if (!(id > 0)) {\n        html = '<span class=\"task-timer-label\">—</span>';\n    } else if (status === 900) {\n        html = '<span class=\"task-timer-label task-timer-done\">済</span>';\n    } else if (status === 910) {\n        html = '<span class=\"task-timer-label\" title=\"レコードを開いて再開・完了を操作してください\">詳細で操作</span>';\n    } else if ((status === 100 && !started && !ended) ||\n               (status === 200 && started && !ended)) {\n        const processId = status === 100 ? 1 : 4;\n        const label = processId === 1 ? '開始' : '完了';\n        const icon = processId === 1 ? '▶' : '■';\n        const stamp = new Date(model.UpdatedTime).getTime();\n        if (!isFinite(stamp)) {\n            html = '<span class=\"task-timer-label\">要確認</span>';\n        } else {\n            html = '<button type=\"button\" class=\"task-timer-button task-timer-' +\n                (processId === 1 ? 'start' : 'finish') + '\" data-record-id=\"' + id +\n                '\" data-site-id=\"' + Number(context.SiteId) +\n                '\" data-process-id=\"' + processId + '\" data-stamp=\"' + stamp +\n                '\" title=\"' + (processId === 1 ? '計測を開始します' : '計測を終了し、タスクを完了にします') +\n                '\"><span aria-hidden=\"true\">' + icon + '</span> ' + label + '</button>';\n        }\n    } else {\n        html = '<span class=\"task-timer-label\" title=\"レコードを開いて状況・実績日時を確認してください\">要確認</span>';\n    }\n    columns.ClassD.RawText = html;\n})();\n",
+            "TryCatch": true,
+            "Id": 3
+          },
+          {
+            "Title": "SS-04 一覧計測の更新検証",
+            "Name": "TASK_GRID_TIMER_GUARD",
+            "BeforeUpdate": true,
+            "Body": "(function () {\n    'use strict';\n    // Only requests from the new grid controls. Existing editor operations are unchanged.\n    const raw = String(context.ApiRequestBody || '');\n    if (!raw) return;\n    let request;\n    try { request = JSON.parse(raw); } catch (e) { return; }\n    const timer = request.TaskGridTimer;\n    if (!timer) return;\n    function reject(message) { context.Error(message); }\n    const processId = Number(request.ProcessId);\n    if (request.ProcessIds || (processId !== 1 && processId !== 4) ||\n        Number(timer.SiteId) !== Number(context.SiteId)) {\n        reject('一覧の計測操作が不正です。一覧を再読み込みしてください。');\n        return;\n    }\n    const stamp = new Date(saved.UpdatedTime).getTime();\n    if (!isFinite(stamp) || Number(timer.Stamp) !== stamp) {\n        reject('このタスクは別の操作で更新されています。一覧を再読み込みしてください。');\n        return;\n    }\n    const started = utilities.InRange(saved.DateA);\n    const ended = utilities.InRange(saved.DateB);\n    const pauseStart = utilities.InRange(saved.DateC);\n    const pauseEnd = utilities.InRange(saved.DateD);\n    if (processId === 1) {\n        if (Number(saved.Status) !== 100 || started || ended || pauseStart || pauseEnd ||\n            Number(model.Status) !== 200 || !utilities.InRange(model.DateA)) {\n            reject('開始できません。レコードを開いて状況・実績日時を確認してください。');\n        }\n        return;\n    }\n    if (Number(saved.Status) !== 200 || !started || ended ||\n        Number(model.Status) !== 900 || !utilities.InRange(model.DateB)) {\n        reject('終了できません。レコードを開いて状況・実績日時を確認してください。');\n        return;\n    }\n    if (pauseStart !== pauseEnd) {\n        reject('中断日時が未確定です。レコードを開いて操作してください。');\n        return;\n    }\n    const start = new Date(saved.DateA).getTime();\n    const end = new Date(model.DateB).getTime();\n    const from = pauseStart ? new Date(saved.DateC).getTime() : 0;\n    const to = pauseEnd ? new Date(saved.DateD).getTime() : 0;\n    const rest = Number(saved.NumB || 0);\n    if (!isFinite(start) || !isFinite(end) || !isFinite(rest) || rest < 0 || end < start ||\n        (pauseStart && (!isFinite(from) || !isFinite(to) || from < start || to < from || to > end)) ||\n        end - start - (to - from) - rest * 60000 < 0) {\n        reject('実績日時・休憩時間が整合しません。レコードを開いて確認してください。');\n    }\n})();\n",
+            "TryCatch": true,
+            "Id": 4
+          }
+        ],
+        "CharToAddWhenCopying": "",
+        "NoDisplayIfReadOnly": false,
+        "NotInheritPermissionsWhenCreatingSite": false
+      },
+      "Publish": false,
+      "DisableCrossSearch": false,
+      "Comments": []
+    }
+  ],
+  "Data": [],
+  "Permissions": [
+    {
+      "SiteId": 9663,
+      "Permissions": [
+        {
+          "ReferenceId": 9663,
+          "DeptId": 0,
+          "GroupId": 0,
+          "UserId": 1,
+          "PermissionType": 511
+        },
+        {
+          "ReferenceId": 9750,
+          "DeptId": 0,
+          "GroupId": 0,
+          "UserId": 1,
+          "PermissionType": 511
+        },
+        {
+          "ReferenceId": 9974,
+          "DeptId": 0,
+          "GroupId": 0,
+          "UserId": 1,
+          "PermissionType": 511
+        }
+      ]
+    },
+    {
+      "SiteId": 9601,
+      "Permissions": []
+    },
+    {
+      "SiteId": 9750,
+      "Permissions": [
+        {
+          "ReferenceId": 9750,
+          "DeptId": 0,
+          "GroupId": 0,
+          "UserId": 1,
+          "PermissionType": 511
+        }
+      ]
+    },
+    {
+      "SiteId": 9974,
+      "Permissions": [
+        {
+          "ReferenceId": 9974,
+          "DeptId": 0,
+          "GroupId": 0,
+          "UserId": 1,
+          "PermissionType": 511
+        }
+      ]
+    }
+  ],
+  "PermissionIdList": {
+    "DeptIdList": [],
+    "GroupIdList": [],
+    "UserIdList": [
+      {
+        "UserId": 1,
+        "LoginId": "Administrator",
+        "UserCode": "",
+        "Name": "Administrator"
+      }
+    ]
+  }
+}
