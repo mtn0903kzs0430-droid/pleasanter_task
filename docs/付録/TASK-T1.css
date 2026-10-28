@@ -1,0 +1,4 @@
+﻿/*変種画面で一括処理プロセスボタン非表示*/
+#Process_6{
+  display:none!important;
+}

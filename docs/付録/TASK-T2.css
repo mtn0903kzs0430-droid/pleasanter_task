@@ -1,0 +1,40 @@
+﻿.task-timer-button {
+    min-width: 64px;
+    min-height: 32px;
+    padding: 4px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.task-timer-start,
+#Process_1 {
+    background: #2e7d32 !important;
+    border-color: #1b5e20 !important;
+    color: #fff !important;
+}
+.task-timer-finish,
+#Process_4,
+#Process_5 {
+    background: #ef6c00 !important;
+    border-color: #e65100 !important;
+    color: #161616 !important;
+    font-weight: 700;
+}
+/* Existing editor labels are 開始/完了; add the same symbols before them. */
+#Process_1::before,
+#Process_4::before,
+#Process_5::before { font-family: Arial, sans-serif; }
+#Process_1::before { content: '▶'; margin-right: .4em; }
+#Process_4::before,
+#Process_5::before { content: '■'; margin-right: .4em; }
+.task-timer-button:hover { filter: brightness(.92); }
+.task-timer-button:focus-visible { outline: 3px solid #146ac0; outline-offset: 2px; }
+.task-timer-button:disabled { opacity: .55; cursor: wait; }
+.task-timer-label { display: inline-block; min-width: 64px; text-align: center; white-space: nowrap; }
+.task-timer-done { color: #555; background: #eee; border-radius: 4px; padding: 5px 0; }
+.task-timer-message { margin: 8px 0; padding: 8px 12px; background: #edf5ff; color: #193958; }
+.task-timer-error { background: #fff0e9; color: #842500; }
